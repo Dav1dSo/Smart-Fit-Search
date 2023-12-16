@@ -9,8 +9,7 @@ const HeaderWrap = styled.div`
     align-items: center; 
 
     img {
-        width: 20vw;
-        height: 10vh;
+        height: 8vh;
     }
 `
 
