@@ -1,15 +1,15 @@
 import './App.css'
-import Header from './components/Header/Header'
-import Title from './components/Title/Title'
+import Nav from './components/Nav/Nav'
 import FormFilter from './components/FormFilter/FormFilter'
 import Legend from './components/Legend/Legend'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
       <div>
-        <Header/>
-          <Title/>
+        <Nav/>
+          <Header/>
             <FormFilter/>
               <Legend/>
       </div>  

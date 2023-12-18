@@ -1,11 +1,20 @@
-import HeaderWrap from "./Header-Styled";
-import logo from "./../../assets/imgs/logo.svg";
+import { Description, HeaderBox, Heading, HeadingBorder, TextContainer, Title } from "./Header-styled";
+
 
 function Header() {
   return (
-    <HeaderWrap>
-        <img src={logo} alt="teste" />
-    </HeaderWrap>
+    <HeaderBox>
+      <TextContainer>
+        <Heading>
+          <Title>REABERTURA <br/>SMART FIT</Title>
+          <HeadingBorder/>
+        </Heading>
+        <Description>
+          O horário de funcionamento das nossas unidades está seguindo os decretos de cada município.
+          Por isso, confira aqui se a sua unidade está aberta e as medidas de segurança que estamos seguindo.
+        </Description>
+      </TextContainer>
+    </HeaderBox>
   );
 }
 
