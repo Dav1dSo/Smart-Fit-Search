@@ -1,148 +1,125 @@
 import styled from "styled-components";
 
-const Form = styled.form`
-    width: 65vw;
-    height: 55vh;
-    margin: auto;
-    margin-top: 6vh;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px #b3afaf;
+const FormGroup = styled.form`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 65%;
+  width: 100%;
+  margin: 5vh auto;
+  padding: 24px;
+  box-shadow: 0px 0px 10px 1px #b3afaf;
+  border-radius: 18px;
 
-    hr {
-        margin: auto;
-        width: 95%;
-        color: #808080;
-        opacity: 0.3;
-    }
-
-    @media (max-width: 768px) {
-        height: 65vh;
-    }
-
-`
-
-const TitleForm = styled.div`
-
+  .form-icon {
+    font-size: 26px;
+    color: #808080;
     display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
 
     img {
-        padding: 2%;
+      height: 50px;
+    }
+  }
+
+  h2 {
+    color: #808080;
+    font-weight: 300;
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+
+  .radio-wrapper {
+    font-size: 22px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 4px;
+    border-top: 1px solid #d1d0d0;
+    position: relative;
+    color: #808080;
+
+    &:nth-last-child(3) {
+      border-bottom: 1px solid #d1d0d0;
     }
 
-    h1 {
-        margin-top: 4%;
-        color: #808080;
-        font-size: 24px;
-    }
-`
-
-const Inputs = styled.div`
-
-    h1 {
-        margin-left: 3%;
-        color: #808080;
+    span {
+      position: absolute;
+      right: 0px;
     }
 
-`
-const FormGroup = styled.div`
+    label {
+        font-size: 22px;
+        margin-left: 1%;
+    }
+    
+  }
+
+  .btn-wrapper {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
-    label {
-        font-size: 23px;
-        color: #808080;
+    .btn {
+      font-size: 18px;
+      border-radius: 4px;
+      color:  #333333;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
     }
 
-    input[type=radio], input[type=checkbox]  {
-        width: 20px;
-        margin-top: 20px;
+    .btn-primary {
+      background-color:  #FFB612;
     }
 
-`;
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid #9e9e9e;
+    }
 
-const Input = styled.input`
-    margin-left: 3%;
-    margin-right: 5px;
-    
-`;
+  }
 
-const ValueText = styled.span`
-    margin-top: -2vh;
-    align-self: flex-end;
+  .checkbox-wrapper {
     color: #808080;
-    font-size: 22px;
-    margin-right: 3%;
-`;
-
-const InputShowOpen = styled.div`
+    margin: 32px 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: 3%;
-    color: #808080;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
 
-    div {
-        width: 30vw;
+
+    input[type="checkbox"] {
+        margin-right: 8px;
     }
-
-    label {
-        margin: 2%;
-        font-size: 1.2em;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 20px;
-        margin: 4%;
-        flex-direction: column; 
-        align-items: center;
-        text-align: center;
-
-    div {
-        width: 100%; 
-        margin: 4%;
-    }
-
-    label {
-        font-size: 30px;
-    }
-
-}`
-
-const Button = styled.div`
-    text-align: center;
-    margin-top: 20px;
     
-    text-align: center;
-    margin-top: 20px;
+  }
 
-    button {
-        width: 20vw;
-        height: 5vh;
-        border-radius: 5px;
-        background-color: transparent;
-        border: 1px solid #808080;
-        margin-bottom: 10px; 
+  @media (min-width: 768px) {
+    .btn-wrapper {
+      flex-direction: row;
+
+      .btn {
+        width: 25%;
+      }
     }
 
-    button:first-child {
-        background-color: #FFB612;
-        border: none;
-        margin-right: 10px;
+    .checkbox-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
     }
+  }
+`;
 
-    @media (max-width: 768px) {
-        button {
-            width: calc(80% - 20px); 
-            display: block;
-            margin: 10px auto; 
-        }
-
-        button:not(:last-child) {
-            margin-bottom: 30px;
-            margin-right: 60px;
-        }
-
-        button:first-child {
-        }
-}`
-export {TitleForm, Form, Inputs, FormGroup, Input, ValueText, InputShowOpen, Button};
+export default FormGroup;

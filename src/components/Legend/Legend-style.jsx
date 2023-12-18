@@ -6,11 +6,11 @@ const LegendBox = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #00000019;
-  max-width: 64.5%;
+  max-width: 66%;
   width: 80%;
   margin: 0 auto;
   padding: 24px 12px;
-  border-radius: 4px;
+  border-radius: 10px;
   gap: 24px;
   margin-top: 4vh;
 
@@ -33,7 +33,6 @@ const LegendImages = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 `;
 
 const LegendImage = styled.div`
@@ -50,7 +49,7 @@ const Image = styled.img`
     width: 50px;
   }
 
-  @media (min-width: 1380px) {
+  @media (min-width: 1500px) {
     width: 100px;
   }
 `;

@@ -18,7 +18,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 80%;
+  max-width: 65%;
   margin: 0 auto;
   margin-top: 5vh;
 `;
@@ -43,7 +43,8 @@ const Title = styled.h1`
   color: #333333;
 `;
 
-const Description = styled.p`
+const Description = styled.h3`
+  margin: auto;
   color: #808080;
 `;
 
