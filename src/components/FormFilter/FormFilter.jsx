@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 
 
-const FormFilter = () => {
+const FormFilter = ({ onUnitClick }) => {
   const [Unidades, setUnidades] = useState();
 
   const GetUnits = async (event) => {
@@ -17,7 +17,10 @@ const FormFilter = () => {
     } catch (error) {
       console.log('Erro ao fazer a requisição:', error);
     }
-    
+  };
+
+  const handleUnitSelection = (unitData) => {
+    onUnitClick(unitData); // Chama a função passada por props para notificar o App.jsx sobre a unidade selecionada
   };
 
   const handleClean = () => {
@@ -54,7 +57,7 @@ const FormFilter = () => {
         <span>Resultados encontrados: 0</span>
       </div>
       <div className="btn-wrapper">
-        <button type="submit" className="btn btn-primary" onClick={GetUnits}>
+        <button type="submit" className="btn btn-primary" onClick={() => handleUnitSelection(Unidades)}>
           Encontrar unidade
         </button>
         <button type="button" className="btn btn-secondary" onClick={handleClean}>

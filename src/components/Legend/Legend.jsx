@@ -12,10 +12,10 @@ import required_Towel from "../../assets/imgs/required-towel.png"
 import required_Bottle from "../../assets/imgs/partial-fountain.png"
 import recommended_Mask from "../../assets/imgs/recommended-mask.png";
 import recommended_Towel from "../../assets/imgs/recommended-towel.png"
-import recommended_Bottle from "../../assets/imgs/forbidden-fountain.png"
-import released_lockerroom from "../../assets/imgs/required-lockerroom.png"
+import recommended_Bottle from "../../assets/imgs/not_allowed-fountain.png"
+import released_lockerroom from "../../assets/imgs/allowed-lockerroom.png"
 import partial_lockerroom from "../../assets/imgs/partial-lockerroom.png"
-import closed_lockerroom from "../../assets/imgs/forbidden-lockerroom.png"
+import closed_lockerroom from "../../assets/imgs/closed-lockerroom.png"
 
 function Legend() {
   return (
