@@ -68,7 +68,7 @@ const FormGroup = styled.form`
     width: 100%;
 
     .btn {
-      font-size: 18px;
+      font-size: 14px;
       border-radius: 4px;
       color:  #333333;
       font-weight: 700;

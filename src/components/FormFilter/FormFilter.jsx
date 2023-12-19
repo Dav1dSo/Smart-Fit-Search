@@ -1,10 +1,23 @@
 import FormGroup from "./FormFilter-Styled";
 import iconHours from "../../assets/imgs/icon-hour.png"
+import axios from "axios";
+import { useState } from "react";
+
 
 const FormFilter = () => {
-  const handleSubmit = (event) => {
+  const [Unidades, setUnidades] = useState();
+
+  const GetUnits = async (event) => {
     event.preventDefault();
-    // fetch
+    
+    try {
+        const response = await axios.get('https://test-frontend-developer.s3.amazonaws.com/data/locations.json')
+        const units = await response.data.locations;
+        setUnidades(units);
+    } catch (error) {
+      console.log('Erro ao fazer a requisição:', error);
+    }
+    
   };
 
   const handleClean = () => {
@@ -12,7 +25,7 @@ const FormFilter = () => {
   };
 
   return (
-    <FormGroup onSubmit={handleSubmit}>
+    <FormGroup onSubmit={GetUnits}>
       <div className="form-icon">
         <img src={iconHours} alt="Hour Icon" />
         Horário
@@ -41,7 +54,7 @@ const FormFilter = () => {
         <span>Resultados encontrados: 0</span>
       </div>
       <div className="btn-wrapper">
-        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+        <button type="submit" className="btn btn-primary" onClick={GetUnits}>
           Encontrar unidade
         </button>
         <button type="button" className="btn btn-secondary" onClick={handleClean}>
