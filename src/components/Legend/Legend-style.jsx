@@ -43,7 +43,7 @@ const LegendImage = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100px;
+  width: 80px;
 
   @media (min-width: 1120px) {
     width: 50px;
