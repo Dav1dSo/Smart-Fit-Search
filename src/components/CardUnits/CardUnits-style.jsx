@@ -34,14 +34,13 @@ const Divider = styled.div`
 const StyledSpan = styled.span`
   font-weight: 700;
   font-size: 14px;
-  color: #ff0000; /* Red color */
+  color: #ff0000; 
   &.opened {
-    color: #05c405; /* Green color */
-  }
+    color: #05c405; 
 `;
 
 const StyledH3 = styled.h3`
-  color: #333333; /* Dark grey color */
+  color: #333333; 
   font-size: 24px;
   font-weight: bold;
 `;
@@ -52,6 +51,7 @@ const StyledP = styled.p`
 `;
 
 const StyledUl = styled.ul`
+  margin-top: 2vh;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -59,15 +59,17 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li`
+  flex-basis: calc(50% - 12px); 
   display: flex;
   flex-direction: column;
-  color: #333333; /* Dark grey color */
+  color: #333333;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
+  margin-bottom: 24px;
 
   & b {
-    font-size: 16px;
-    color: #333333; /* Dark grey color */
+    font-size: 22px;
+    color: #333333; 
   }
 `;
 
