@@ -59,12 +59,11 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li`
-  flex-basis: calc(50% - 12px); 
   display: flex;
   flex-direction: column;
   color: #333333;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 24px;
 
   & b {
