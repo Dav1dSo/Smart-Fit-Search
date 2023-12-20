@@ -11,9 +11,8 @@ function App() {
   const [selectedUnit, setSelectedUnit] = useState(null);
 
   const handleUnitClick = (unitData) => {
-    setSelectedUnit(unitData); // Atualiza o estado com os dados da unidade selecionada
+    setSelectedUnit(unitData); 
   };
-
 
   return (
       <div>
