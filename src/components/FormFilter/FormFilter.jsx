@@ -7,26 +7,32 @@ import { useEffect, useState } from "react";
 const FormFilter = ({ onUnitClick }) => {
   const [Unidades, setUnidades] = useState([]);
   const [Filter, setFilter] = useState('');
+  const [Closed, setClosed] = useState(false);
 
   const OptionFilter = (event) => {
     setFilter(event.target.value);
   }
 
+  const Unitclosed = (event) => {
+    setClosed(event.target.checked)
+  }
+  
   const GetUnits = async (event) => {
     event.preventDefault();
+    
     try {
-        const response = await axios.get('https://test-frontend-developer.s3.amazonaws.com/data/locations.json')
-        const units = await response.data.locations;
-
-        if (Filter !== '') {
-          if (units && units.length > 0) {
-            const FilterUnits = units.filter(unit => {
-              if (unit.schedules && unit.schedules.length > 0) {
-                const hasMatchingSchedule = unit.schedules.some(schedule => {
-                  return (
-                    schedule.hour &&
-                    schedule.hour.includes(Filter) &&
-                    schedule.hour !== 'Fechada'
+      const response = await axios.get('https://test-frontend-developer.s3.amazonaws.com/data/locations.json')
+      const units = await response.data.locations;
+      
+      if (Filter !== '') {
+        if (units && units.length > 0) {
+          const FilterUnits = units.filter(unit => {
+            if (unit.schedules && unit.schedules.length > 0) {
+              const hasMatchingSchedule = unit.schedules.some(schedule => {
+                return (
+                  schedule.hour &&
+                  schedule.hour.includes(Filter) &&
+                  (Closed || schedule.hour !== "Fechada")
                   );
                 });
         
@@ -42,7 +48,6 @@ const FormFilter = ({ onUnitClick }) => {
       console.log('Erro ao fazer a requisição:', error);
     }
   };
-
   
   const handleUnitSelection = (unitData) => {
     onUnitClick(unitData); 
@@ -55,7 +60,13 @@ const FormFilter = ({ onUnitClick }) => {
   }, [Unidades]);
 
   const handleClean = () => {
-    //limpar o formulário 
+    setFilter(''); 
+    setClosed(false);
+    setUnidades([]);   
+    const radioButtons = document.querySelectorAll('input[type="radio"][name="hour"]');
+      radioButtons.forEach(button => {
+      button.checked = false;
+    });
   };
 
   return (
@@ -82,7 +93,7 @@ const FormFilter = ({ onUnitClick }) => {
       </div>
       <div className="checkbox-wrapper">
         <div className="checkbox">
-          <input onChange={OptionFilter} type="checkbox" name="showClosed" />
+          <input onChange={Unitclosed} checked={Closed} type="checkbox" name="showClosed" />
           <label htmlFor="showClosed">Exibir unidades fechadas</label>
         </div>
         <span>Resultados encontrados: 0</span>
