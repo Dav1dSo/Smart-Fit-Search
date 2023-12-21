@@ -15,7 +15,7 @@ const FormFilter = ({ onUnitClick }) => {
 
   const Unitclosed = (event) => {
     setClosed(event.target.checked)
-  }
+  } 
   
   const GetUnits = async (event) => {
     event.preventDefault();
