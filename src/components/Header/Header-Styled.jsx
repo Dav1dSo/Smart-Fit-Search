@@ -48,4 +48,4 @@ const Description = styled.h3`
   color: #808080;
 `;
 
-export {HeaderBox, LogoImage, TextContainer, Heading, HeadingBorder, Title, Description};
+export { HeaderBox, LogoImage, TextContainer, Heading, HeadingBorder, Title, Description };
