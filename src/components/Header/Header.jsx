@@ -1,7 +1,4 @@
-import React from "react";
-import * as Styled from "./Header-styled";
-
-const { HeaderBox, TextContainer, Heading, Title, HeadingBorder, Description } = Styled;
+import { HeaderBox, TextContainer, Heading, Title, HeadingBorder, Description } from "./Header_style";
 
 function Header() {
   return (
