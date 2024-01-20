@@ -1,4 +1,4 @@
-import { HeaderBox, TextContainer, Heading, Title, HeadingBorder, Description } from "./Header_style";
+import { HeaderBox, TextContainer, Heading, Title, HeadingBorder, Description } from "./Style-Header";
 
 function Header() {
   return (
